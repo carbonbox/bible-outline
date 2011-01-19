@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Outlines</title>
+    <link rel='stylesheet' href='static/bible.css'>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    [% FOR b = books %]
+    <ul>
+    [% FOR c = b.chapters %]
+      <!-- [% c.book %] [% c.chapter %] -->
+      <li class='[% c.class %]'>
+        <h1><em>[% b.name %] [% c.chapter %]</em>[% p.title %]</h1>
+        <ul class='outline'>
+        [% FOR s = c.sections %]
+          <li class='[% s.class %]'><em>[% s.verses %]</em>[% s.summary %]</li>
+        [% END %]
+        </ul>
+        <p>[% p.notes %]</p>
+      </li>
+    [% END %]
+    </ul>
+    [% END %]
+    <script src='js/mootools-core-1.3.js'></script>
+    <script src='js/bible.js'></script>
+  </body>
+</html>
