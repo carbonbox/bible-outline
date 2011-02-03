@@ -9,9 +9,9 @@
     [% FOR b = books %]
     <ul>
     [% FOR c = b.chapters %]
-      <!-- [% c.book %] [% c.chapter %] -->
+      <!-- [% b.name %] [% c.chapter %] -->
       <li class='[% c.class %]'>
-        <h1><em>[% b.name %] [% c.chapter %]</em>[% p.title %]</h1>
+        <h1><em>[% b.name %] [% c.chapter %]</em>[% c.title %]</h1>
         <ul class='outline'>
         [% FOR s = c.sections %]
           <li class='[% s.class %]'><em>[% s.verses %]</em>[% s.summary %]</li>
